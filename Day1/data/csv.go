@@ -22,8 +22,7 @@ func ReadFile(path string) ([]string, error) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println((string(content)))
 	fileContent := string(content)
-	splitFile, err := LineToCSV(fileContent)
-	return splitFile, err
+	lines := strings.Split(fileContent, "\n")
+	return lines, err
 }
